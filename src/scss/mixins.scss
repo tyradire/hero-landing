@@ -1,0 +1,17 @@
+@mixin title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+@mixin description {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+}
+
+@mixin menu-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
