@@ -1,3 +1,9 @@
+@mixin header-logo {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 38px;
+}
+
 @mixin title {
   font-weight: 700;
   font-size: 48px;
@@ -14,4 +20,11 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+
+@mixin button {
+  border: none;
+  border-radius: 20px;
+  background-color: $accent-details-color;
+  color: $button-color-text;
 }

@@ -1,0 +1,66 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.header {
+  max-width: 1113px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo-container {
+    display: flex;
+    align-items: center;
+  }
+  &__logo-name {
+    margin: 0;
+    margin-left: 8px;
+    @include header-logo;
+  }
+  &__button {
+    cursor: pointer;
+    padding: 9px 23px;
+    @include button;
+  }
+}
+
+.menu {
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+  }
+  &__link {
+    position: relative;
+    margin-left: 45px;
+    &:first-of-type {
+      margin-left: 0;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 21px;
+        height: 1.5px;
+        background-color: $active-button-border-color;
+        bottom: -2.5px;
+        left: calc(50% - 10.5px);
+      }
+    }
+    a {
+      color: $menu-color-text;
+      text-decoration: none;
+      @include menu-link;
+    }
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 21px;
+        height: 1.5px;
+        background-color: $active-button-border-color;
+        bottom: -2.5px;
+        left: calc(50% - 10.5px);
+      }
+    }
+  }
+}
