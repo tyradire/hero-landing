@@ -5,13 +5,20 @@
   max-width: 1110px;
   margin: 0 auto;
   margin-top: 120px;
+  display: flex;
   &__user-side {
 
+  }
+  &__animate-side {
+    position: relative;
+    width: 836px;
+    height: 601px;
   }
 }
 
 .user-side {
   &__title {
+    margin: 0;
     color: $main-color-text;
     @include title;
     &_accent {
@@ -24,8 +31,12 @@
     @include description;
   }
   &__button {
+    margin-top: 10px;
     cursor: pointer;
-    padding: 11.5px 21px;
+    padding: 12px 28px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
     @include button;
   }
   &__form {
@@ -121,3 +132,67 @@
     line-height: 19px;
   }
 }
+
+.animate-side {
+  &__user-image {
+    position: absolute;
+    bottom: 34px;
+    right: 76px;
+    z-index: 10;
+  }
+  &__ring {
+    position: absolute;
+    top: -34px;
+    right: -6px;
+    width: 450px;
+    height: 450px;
+    border: 2px solid $border-color;
+    border-radius: 50%;
+  }
+  &__flag {
+    border: 10px solid $additional-color;
+    border-radius: 50%;
+  }
+}
+
+#india-1 {
+  position: absolute;
+  bottom: 350px;
+  left: 40px;
+  width: 30px;
+  height: 30px;
+  animation: testAnimation 10s infinite linear;
+  transform-origin: 190px 178px;
+}
+#britain-1 {
+  position: absolute;
+  top: 75px;
+  left: -11px;
+  width: 60px;
+  height: 60px;
+}
+#italy-1 {
+  position: absolute;
+  top: -32px;
+  left: 212px;
+  width: 40px;
+  height: 40px;
+}
+#india-2 {
+  position: absolute;
+  top: 84px;
+  right: -2px;
+  width: 50px;
+  height: 50px;
+}
+#india-3 {
+  position: absolute;
+  bottom: 154px;
+  right: -20px;
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes testAnimation {
+  100% {transform: rotate(360deg);}
+  }
