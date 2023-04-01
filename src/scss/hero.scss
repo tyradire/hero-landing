@@ -38,6 +38,9 @@
     font-size: 15px;
     line-height: 22px;
     @include button;
+    &:hover {
+      background-color: $hover-color-button;
+    }
   }
   &__form {
     position: relative;
@@ -82,6 +85,9 @@
     background-image: url('../images/search.svg');
     background-repeat: no-repeat;
     background-position: center;
+    &:hover {
+      background-color: $hover-color-button;
+    }
   }
 }
 
@@ -152,17 +158,19 @@
   &__flag {
     border: 10px solid $additional-color;
     border-radius: 50%;
+    &_active {
+      animation: testAnimation 20s infinite linear;
+    }
   }
 }
 
 #india-1 {
   position: absolute;
-  bottom: 350px;
-  left: 40px;
+  bottom: 154px;
+  left: -20px;
   width: 30px;
   height: 30px;
-  animation: testAnimation 10s infinite linear;
-  transform-origin: 190px 178px;
+  transform-origin: 248px -21px;
 }
 #britain-1 {
   position: absolute;
@@ -170,6 +178,7 @@
   left: -11px;
   width: 60px;
   height: 60px;
+  transform-origin: 236px 145px;
 }
 #italy-1 {
   position: absolute;
@@ -177,6 +186,7 @@
   left: 212px;
   width: 40px;
   height: 40px;
+  transform-origin: 20px 255px;
 }
 #india-2 {
   position: absolute;
@@ -184,6 +194,7 @@
   right: -2px;
   width: 50px;
   height: 50px;
+  transform-origin: -155px 145px;
 }
 #india-3 {
   position: absolute;
@@ -191,8 +202,11 @@
   right: -20px;
   width: 30px;
   height: 30px;
+  transform-origin: -195px -18px;
 }
 
 @keyframes testAnimation {
-  100% {transform: rotate(360deg);}
+  100% {
+    transform: rotate(360deg);
   }
+}
