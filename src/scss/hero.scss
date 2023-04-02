@@ -7,12 +7,24 @@
   margin-top: 120px;
   display: flex;
   &__user-side {
-
+    @media screen and (max-width: 992px) {
+      margin: 0 auto;
+    }
   }
   &__animate-side {
     position: relative;
     width: 836px;
     height: 601px;
+    @media screen and (max-width: 992px) {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
   }
 }
 
@@ -153,9 +165,13 @@
 .animate-side {
   &__user-image {
     position: absolute;
+    width: 280px;
     bottom: 34px;
     right: 76px;
     z-index: 10;
+    @media screen and (max-width: 992px) {
+      position: static;
+    }
   }
   &__ring {
     position: absolute;
@@ -165,6 +181,9 @@
     height: 450px;
     border: 2px solid $border-color;
     border-radius: 50%;
+    @media screen and (max-width: 992px) {
+      right: calc(50% - 225px);
+    }
   }
   &__flag {
     border: 10px solid $additional-color;

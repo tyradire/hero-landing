@@ -8,6 +8,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 992px) {
+    max-width: 100%;
+    margin: 20px 40px 0;
+  }
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 14px 40px;
+    justify-content: flex-start;
+    background-color: $main-background-color;
+    z-index: 100;
+  }
+  &__menu {
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      display: none;
+      width: 100%;
+      top: 64px;
+      left: 0;
+      padding: 10px 50px;
+      background-color: $additional-color;
+    }
+    &_opened {
+      display: block;
+    }
+  }
   &__logo-container {
     display: flex;
     align-items: center;
@@ -21,6 +50,42 @@
     cursor: pointer;
     padding: 9px 23px;
     @include button;
+    @media screen and (max-width: 768px) {
+      margin-left: 40px;
+    }
+  }
+  &__button-menu {
+    cursor: pointer;
+    position: fixed;
+    top: 18px;
+    right: 40px;
+    width: 33px;
+    height: 33px;
+    background-color: transparent;
+    border: none;
+    div {
+      width: 33px;
+      height: 3px;
+      background-color: $accent-details-color;
+      margin-bottom: 10px;
+      transition: .5s;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__checkbox-menu {
+    display: none;
+  }
+  &__checkbox-menu:checked + .header__button-menu div:first-of-type{
+    transform: rotateZ(45deg) translate(10px, 8px);
+  }
+  &__checkbox-menu:checked + .header__button-menu div:last-of-type{
+    transform: rotateZ(-45deg) translate(10px, -8px);
+  }
+  &__checkbox-menu:checked + .header__button-menu div:nth-child(2){
+    transform: translateX(0px);
+    background-color: transparent;
   }
 }
 
@@ -34,6 +99,9 @@
   &__link {
     position: relative;
     margin-left: 45px;
+    @media screen and (max-width: 992px) {
+      margin-left: 25px;
+    }
     &:first-of-type {
       margin-left: 0;
       &::after {
