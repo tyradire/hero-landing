@@ -9,13 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerMenuButton = document.querySelector('.header__button-menu');
   const checkboxMenuButton = document.querySelector('.header__checkbox-menu');
 
-  setTimeout(() => {
-    flags.forEach(elem => {
-      elem.style.animation = 'testAnimation 20s infinite linear'
-      elem.style.opacity = 1
-    })
-  }, 2600);
-
   let windowSize = 0;
   let screenType = 'desktop';
 
@@ -23,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     windowSize = window.innerWidth
     if (windowSize > 992) {
       screenType = 'desktop';
-      headerMenu.style.display = 'block';
       burgerMenuButton.style.display = 'none';
     }
     else if (windowSize < 600) {
@@ -35,10 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     else {
       screenType = 'laptop';
-      headerMenu.style.display = 'block';
       burgerMenuButton.style.display = 'none';
     }
-    console.log(windowSize, screenType)
+  }
+
+  const startAnimation = () => {
+    if (windowSize > 600) {
+      setTimeout(() => {
+        flags.forEach(elem => {
+          elem.style.animation = 'testAnimation 20s infinite linear'
+          elem.style.opacity = 1
+        })
+      }, 2600);
+    } else return;
   }
 
   function testFunc(e) {
@@ -60,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(dataUrl)
     .then(res => res.json())
     .then(res => description.textContent = res[0]);
+    startAnimation();
   }
 
   initialization();

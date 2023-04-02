@@ -28,13 +28,15 @@
       position: absolute;
       display: none;
       width: 100%;
-      top: 64px;
+      top: 0;
       left: 0;
       padding: 10px 50px;
       background-color: $additional-color;
     }
     &_opened {
       display: block;
+      top: 64px;
+      animation: openHeaderMenu .25s linear;
     }
   }
   &__logo-container {
@@ -130,5 +132,13 @@
         left: calc(50% - 10.5px);
       }
     }
+  }
+}
+
+@keyframes openHeaderMenu {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
   }
 }

@@ -1,6 +1,7 @@
 @import './mixins.scss';
 @import './variables.scss';
 
+
 .hero {
   max-width: 1110px;
   margin: 0 auto;
@@ -9,6 +10,9 @@
   &__user-side {
     @media screen and (max-width: 992px) {
       margin: 0 auto;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0 40px;
     }
   }
   &__animate-side {
@@ -22,6 +26,10 @@
       display: flex;
       justify-content: center;
     }
+    @media screen and (max-width: 600px) {
+      width: 200px;
+      height: 400px;
+    }
   }
   @media screen and (max-width: 992px) {
     flex-direction: column;
@@ -33,6 +41,9 @@
     margin: 0;
     color: $main-color-text;
     @include title;
+    @media screen and (max-width: 768px) {
+      @include title-mobile;
+    }
     &_accent {
       color: $accent-color-text;
     }
@@ -47,6 +58,9 @@
     -webkit-box-orient: vertical;
     color: $description-color-text;
     @include description;
+    @media screen and (max-width: 768px) {
+      width: 380px;
+    }
   }
   &__button {
     margin-top: 10px;
@@ -68,6 +82,10 @@
     background-color: $additional-color;
     box-shadow: 0px 20px 30px rgba(222, 222, 222, 0.25);
     border-radius: 100px;
+    @media screen and (max-width: 768px) {
+      max-width: 380px;
+      height: 52px;
+    }
   }
   &__counter {
     display: flex;
@@ -94,6 +112,10 @@
     &:focus {
       box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
     }
+    @media screen and (max-width: 768px) {
+      width: 350px;
+      padding: 16px 0 16px 30px;
+    }
   }
   &__button {
     position: absolute;
@@ -110,6 +132,10 @@
     background-position: center;
     &:hover {
       background-color: $hover-color-button;
+    }
+    @media screen and (max-width: 768px) {
+      width: 44px;
+      height: 44px;
     }
   }
 }
@@ -159,6 +185,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
+    @media screen and (max-width: 768px) {
+      font-size: 13px;
+      line-height: 14px;
+    }
   }
 }
 
@@ -172,6 +202,10 @@
     @media screen and (max-width: 992px) {
       position: static;
     }
+    @media screen and (max-width: 600px) {
+      width: 200px;
+      height: 400px;
+    }
   }
   &__ring {
     position: absolute;
@@ -183,6 +217,11 @@
     border-radius: 50%;
     @media screen and (max-width: 992px) {
       right: calc(50% - 225px);
+    }
+    @media screen and (max-width: 600px) {
+      width: 320px;
+      height: 320px;
+      right: calc(50% - 160px);
     }
   }
   &__flag {
@@ -204,6 +243,10 @@
   transform-origin: 248px -21px;
   animation: leftStart 1s linear;
   animation-fill-mode: both;
+  @media screen and (max-width: 600px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 #britain-1 {
   opacity: 0;
@@ -216,6 +259,10 @@
   animation: leftStart 1s linear;
   animation-delay: 400ms;
   animation-fill-mode: both;
+  @media screen and (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 #italy-1 {
   opacity: 0;
@@ -228,6 +275,10 @@
   animation: topStart 1s linear;
   animation-delay: 800ms;
   animation-fill-mode: forwards;
+  @media screen and (max-width: 600px) {
+    width: 25px;
+    height: 25px;
+  }
 }
 #india-2 {
   opacity: 0;
@@ -240,6 +291,10 @@
   animation: rightStart 1s linear;
   animation-delay: 1200ms;
   animation-fill-mode: forwards;
+  @media screen and (max-width: 600px) {
+    width: 35px;
+    height: 35px;
+  }
 }
 #india-3 {
   opacity: 0;
@@ -251,6 +306,11 @@
   transform-origin: -195px -18px;
   animation: rightStart 1s linear;
   animation-delay: 1600ms;
+  animation-fill-mode: forwards;
+  @media screen and (max-width: 600px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @keyframes leftStart {
