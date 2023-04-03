@@ -151,6 +151,12 @@
     &:hover {
       background-color: $hover-color-button;
     }
+    &:disabled {
+      cursor: default;
+      &:hover {
+        background-color: $accent-details-color;
+      }
+    }
     @media screen and (max-width: 768px) {
       width: 44px;
       height: 44px;
@@ -268,6 +274,7 @@
   height: 30px;
   transform-origin: 248px -21px;
   animation: leftStart 1s linear;
+  animation-delay: 3000ms;
   animation-fill-mode: both;
   @media screen and (max-width: 600px) {
     width: 20px;
@@ -285,7 +292,7 @@
   height: 60px;
   transform-origin: 236px 145px;
   animation: leftStart 1s linear;
-  animation-delay: 400ms;
+  animation-delay: 3400ms;
   animation-fill-mode: both;
   @media screen and (max-width: 600px) {
     width: 40px;
@@ -302,7 +309,7 @@
   height: 40px;
   transform-origin: 20px 255px;
   animation: topStart 1s linear;
-  animation-delay: 800ms;
+  animation-delay: 3800ms;
   animation-fill-mode: forwards;
   @media screen and (max-width: 600px) {
     width: 25px;
@@ -320,7 +327,7 @@
   height: 50px;
   transform-origin: -155px 145px;
   animation: rightStart 1s linear;
-  animation-delay: 1200ms;
+  animation-delay: 4200ms;
   animation-fill-mode: forwards;
   @media screen and (max-width: 600px) {
     width: 35px;
@@ -337,7 +344,7 @@
   height: 30px;
   transform-origin: -195px -18px;
   animation: rightStart 1s linear;
-  animation-delay: 1600ms;
+  animation-delay: 4600ms;
   animation-fill-mode: forwards;
   @media screen and (max-width: 600px) {
     width: 20px;

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerMenu = document.querySelector('.header__menu');
   const burgerMenuButton = document.querySelector('.header__button-menu');
   const checkboxMenuButton = document.querySelector('.header__checkbox-menu');
+  const submitButton = document.querySelector('.form__button');
 
   let windowSize = 0;
   let screenType = 'desktop';
@@ -38,15 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
           elem.style.animation = 'testAnimation 20s infinite linear'
           elem.style.opacity = 1
         })
-      }, 2600);
+      }, 5600);
     } else return;
   }
 
-  function testFunc(e) {
+  function validate(e) {
     const regex = /[!@#$%^&*()]/;
-    if (e.key.match(regex)) e.preventDefault();
+    if ((12 < heroInput.value.length) || (4 > heroInput.value.length)) {
+      submitButton.disabled = true
+    } else submitButton.disabled = false;
+    if (e.data.match(regex)) heroInput.value = heroInput.value.replace(regex, '');
   }
-  heroInput.addEventListener('keypress', (e) => testFunc(e))
+  heroInput.addEventListener('input', (e) => validate(e))
 
   window.addEventListener("resize", setWindowSize);
 
@@ -55,12 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   checkboxMenuButton.addEventListener('change', openMobileMenu)
-  
+
   const initialization = () => {
     setWindowSize();
     fetch(dataUrl)
     .then(res => res.json())
-    .then(res => description.textContent = res[0]);
+    .then(res => description.textContent = res[0])
+    .catch(err => console.log('Ошибка:', err));
     startAnimation();
   }
 
