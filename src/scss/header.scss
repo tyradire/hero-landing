@@ -23,6 +23,9 @@
     background-color: $main-background-color;
     z-index: 100;
   }
+  @media screen and (max-width: 600px) {
+    padding: 12px 20px;
+  }
   &__menu {
     @media screen and (max-width: 768px) {
       position: absolute;
@@ -33,27 +36,60 @@
       padding: 10px 50px;
       background-color: $additional-color;
     }
+    @media screen and (max-width: 600px) {
+      padding: 10px 30px;
+    }
     &_opened {
       display: block;
       top: 64px;
       animation: openHeaderMenu .25s linear;
+      @media screen and (max-width: 600px) {
+        top: 56px;
+      }
     }
   }
   &__logo-container {
-    display: flex;
-    align-items: center;
+    cursor: pointer;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $main-color-text;
+      &:hover {
+        opacity: .8;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
   &__logo-name {
     margin: 0;
     margin-left: 8px;
     @include header-logo;
+    @media screen and (max-width: 600px) {
+      @include header-logo-mobile;
+    }
   }
   &__button {
     cursor: pointer;
-    padding: 9px 23px;
+    padding: 9px 25px;
+    border-radius: 20px;
     @include button;
+    @include button-text;
+    &:hover {
+      background-color: $hover-color-button;
+    }
     @media screen and (max-width: 768px) {
+      margin: 0;
       margin-left: 40px;
+    }
+    @media screen and (max-width: 600px) {
+      padding: 6px 18px;
+      @include button-text-mobile;
     }
   }
   &__button-menu {
@@ -65,12 +101,20 @@
     height: 33px;
     background-color: transparent;
     border: none;
+    @media screen and (max-width: 600px) {
+      top: 15px;
+      right: 20px;
+    }
     div {
       width: 33px;
       height: 3px;
       background-color: $accent-details-color;
       margin-bottom: 10px;
       transition: .5s;
+      @media screen and (max-width: 600px) {
+        width: 28px;
+        height: 2px;
+      }
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -84,6 +128,9 @@
   }
   &__checkbox-menu:checked + .header__button-menu div:last-of-type{
     transform: rotateZ(-45deg) translate(10px, -8px);
+    @media screen and (max-width: 600px) {
+      transform: rotateZ(-45deg) translate(9px, -7px);
+    }
   }
   &__checkbox-menu:checked + .header__button-menu div:nth-child(2){
     transform: translateX(0px);

@@ -4,16 +4,22 @@
   line-height: 38px;
 }
 
+@mixin header-logo-mobile {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 24px;
+}
+
 @mixin title {
   font-weight: 700;
   font-size: 48px;
-  line-height: 65px;
+  line-height: 64px;
 }
 
 @mixin title-mobile {
   font-weight: 700;
-  font-size: 38px;
-  line-height: 44px;
+  font-size: 32px;
+  line-height: 40px;
 }
 
 @mixin description {
@@ -28,9 +34,20 @@
   line-height: 24px;
 }
 
+@mixin button-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin button-text-mobile {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
 @mixin button {
   border: none;
-  border-radius: 20px;
   background-color: $accent-details-color;
   color: $button-color-text;
 }
